@@ -7,3 +7,8 @@ class Item(models.Model):
     price = models.PositiveIntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+
+class Comment(models.Model):
+    post = models.ForeignKey(Item, on_delete=models.CASCADE)
+    message = models.TextField
