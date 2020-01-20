@@ -1,7 +1,9 @@
+from django.conf import settings
 from django.db import models
 
 
 class Post(models.Model):
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, )
     author_name = models.CharField(max_length=20)
     name = models.CharField(max_length=100)
     content = models.TextField()
