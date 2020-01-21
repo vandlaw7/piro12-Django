@@ -1,4 +1,4 @@
-{% load static %}
+{% load static fresh_static %}
 
 <!doctype html>
 <html lang="en">
@@ -11,7 +11,7 @@
     <style>
         body {background-color: lightyellow}
     </style>
-    {% block extra_head %}<link rel="stylesheet" href="{%  static "main.css" %}" />{%  endblock %}
+    {% block extra_head %}<link rel="stylesheet" href="{%  fresh_static "main.css" %}" />{%  endblock %}
 </head>
 <body>
     <h1>Ask Company</h1>

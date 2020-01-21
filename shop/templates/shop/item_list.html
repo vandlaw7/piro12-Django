@@ -10,20 +10,22 @@
     </form>
 
     <ul>
-    {% for item in item_list %}
-        <li>
-            <a href="/shop/{{ item.pk }}/">
-                {{ item.name }}
-            </a>
-            {{ item.price }}
+        {% for item in item_list %}
+            <li>
+                <a href="{{ item.get_absolute_url }}">
+                    {{ item.name }}
+                </a>
+                {{ item.price }}
 
-            {% if item.desc %}
-            <p>{{ item.desc }}</p>
-            {% endif %}
-        </li>
-    {% endfor %}
+                {% if item.desc %}
+                <p>{{ item.desc }}</p>
+                {% endif %}
+            </li>
+        {% endfor %}
     </ul>
 
+    <hr/>
+    <a href="{% url "shop:item_new" %}">New Item</a>
 </body>
 {%  endblock %}
 

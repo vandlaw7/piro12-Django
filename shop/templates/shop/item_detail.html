@@ -8,6 +8,10 @@
 
     <h2>{{ item.name }}</h2>
 
+    {%  if item.photo %}
+        <img src="{{  item.photo.url }}" style = "max-width: 100%;" />
+    {%  endif %}
+
     가격: {{ item.price|intcomma }}
 
     {% if item.desc %}
@@ -17,8 +21,8 @@
     {% endif %}
 
     <hr/>
-    <a href="/shop/">목록</a>
-
+    <a href="{% url "shop:item_list" %}">목록</a>
+    <a href="{% url "shop:item_edit" item.pk  %}">수정</a>
 </body>
 {%  endblock %}
 
