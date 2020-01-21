@@ -1,7 +1,11 @@
 *.pyc
 *~
 __pycache__
+<<<<<<< HEAD
 venv
+=======
+myvenv
+>>>>>>> b79e6a3eed13be7782ef8e8d849d1988d87faa44
 db.sqlite3
 /static
 .DS_Store
